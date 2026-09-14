@@ -1,0 +1,545 @@
+{
+  "users": [
+    {
+      "id": "usr-founder-mahesh",
+      "name": "Jonnada Mahesh",
+      "email": "jonnadamahesh2005@gmail.com",
+      "role": "admin",
+      "company": "Valence Growth HQ",
+      "permissions": [
+        "*"
+      ],
+      "token": "val_adm_founder_secure_token",
+      "password": "ValenceAdmin2026!",
+      "avatar": "/founder-portrait.svg"
+    },
+    {
+      "id": "usr-client-1789187869604",
+      "name": "Alex Rivera",
+      "email": "alex@quantumleap.tech",
+      "role": "client",
+      "company": "QuantumLeap AI",
+      "permissions": [
+        "portal:read",
+        "portal:diagnostics",
+        "portal:agents"
+      ],
+      "token": "val_token_1hdg9qv2",
+      "password": "password123",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Alex%20Rivera"
+    },
+    {
+      "id": "usr-client-1789189800483",
+      "name": "Alex Rivera",
+      "email": "alex.rivera@growthtest.io",
+      "role": "client",
+      "company": "Rivera Tech",
+      "permissions": [
+        "portal:read",
+        "portal:diagnostics",
+        "portal:agents"
+      ],
+      "token": "val_token_2verzcb6",
+      "password": "SecurePassword123!",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Alex%20Rivera"
+    }
+  ],
+  "leads": [
+    {
+      "name": "Alex Mercer",
+      "email": "alex@mercergrowth.com",
+      "company": "Mercer Tech",
+      "stage": "GROW ($15k - $60k/mo)",
+      "primaryChallenge": "Predictable Customer Acquisition & Leads",
+      "priority": "high",
+      "notes": "Role: Executive/Founder. Stage: GROW ($15k - $60k/mo). Timeline: Within 14 Days. Message: Looking to replace manual outreach with autonomous AI agents.",
+      "message": "Looking to replace manual outreach with autonomous AI agents.",
+      "id": "lead-E9M897",
+      "status": "new",
+      "createdAt": "2026-09-12T05:48:39.508Z"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex@quantumflux.dev",
+      "company": "QuantumFlux",
+      "stage": "GROW",
+      "primaryChallenge": "AI Automation + Scaling",
+      "priority": "high",
+      "notes": "Role: Founder. Message: Looking to build an autonomous ecosystem that works 24/7.",
+      "message": "Looking to build an autonomous ecosystem that works 24/7.",
+      "id": "lead-368FG1",
+      "status": "new",
+      "createdAt": "2026-09-12T05:34:47.402Z"
+    },
+    {
+      "id": "lead-849201",
+      "name": "Sarah Connor",
+      "email": "sarah@apexfintech.com",
+      "company": "Apex Fintech Solutions",
+      "stage": "GROW ($15k - $60k/mo)",
+      "primaryChallenge": "Predictable Customer Acquisition & Leads",
+      "status": "active_sprint",
+      "priority": "high",
+      "createdAt": "2026-09-10T04:15:08.610Z",
+      "assignedTo": "Elena Rostova",
+      "notes": "High intent fintech scaleup. Need 24/7 AI qualification agent + paid SEO pipeline.",
+      "message": "Targeting $1.8M ARR over the next 12 months."
+    },
+    {
+      "id": "lead-849202",
+      "name": "Marcus Thorne",
+      "email": "m.thorne@novacare.health",
+      "company": "NovaCare Telehealth",
+      "stage": "AUTOMATE ($60k - $200k/mo)",
+      "primaryChallenge": "Manual Repetitive Busywork & Workflow Drag",
+      "status": "closed_won",
+      "priority": "high",
+      "createdAt": "2026-09-11T04:15:08.610Z",
+      "assignedTo": "David Vance",
+      "notes": "Clinic staff overloaded scheduling patients. Recommending Automation Engine + HIPAA-compliant Agent.",
+      "message": "Currently losing 40 hours/week on intake phone calls."
+    },
+    {
+      "id": "lead-849203",
+      "name": "Amara Chen",
+      "email": "amara@strataware.io",
+      "company": "StrataWare Cloud",
+      "stage": "SCALE ($200k+/mo)",
+      "primaryChallenge": "Data Intelligence, Dashboards & Executive Clarity",
+      "status": "closed_won",
+      "priority": "medium",
+      "createdAt": "2026-09-11T23:15:08.610Z",
+      "assignedTo": "Elena Rostova",
+      "notes": "SaaS company with $3.4M ARR needing unified Snowflake/Stripe executive metrics.",
+      "message": "Executive team blind to retention cohorts."
+    }
+  ],
+  "diagnostics": [
+    {
+      "clientName": "Growth Diagnostic Inquirer",
+      "company": "B2B Services & Consulting Enterprise",
+      "stage": "START",
+      "bottlenecks": [
+        "leads",
+        "2-10 team members"
+      ],
+      "computedRoi": "3.5x - 5x Revenue Velocity",
+      "hoursRecoverable": "12 hrs / week",
+      "targetArr": "$180k ARR",
+      "priorityStack": [
+        "Web & Product Engineering",
+        "Brand Identity & Creative",
+        "Growth Marketing Quickstart"
+      ],
+      "status": "draft",
+      "id": "diag-L3FY1X",
+      "createdAt": "2026-09-12T06:28:24.353Z"
+    },
+    {
+      "clientName": "Verified Founder",
+      "company": "Mercer Tech",
+      "stage": "GROW",
+      "bottlenecks": [
+        "leads",
+        "2-10 team members"
+      ],
+      "computedRoi": "+120% Qualified Pipeline Growth",
+      "hoursRecoverable": "22 hrs / week",
+      "targetArr": "$720k ARR",
+      "priorityStack": [
+        "Growth Marketing & Technical SEO",
+        "AI Customer Agent (24/7 Lead Capture)",
+        "Conversion Funnels"
+      ],
+      "status": "draft",
+      "id": "diag-5HH6X9",
+      "createdAt": "2026-09-12T05:48:41.390Z"
+    },
+    {
+      "clientName": "Alex Rivera",
+      "company": "QuantumFlux",
+      "stage": "GROW",
+      "bottlenecks": [
+        "Low conversion",
+        "Manual busywork"
+      ],
+      "computedRoi": "5.4x ROI",
+      "hoursRecoverable": "28 hrs/wk",
+      "targetArr": "$2M ARR",
+      "priorityStack": [
+        "Web & Product",
+        "Growth Marketing",
+        "AI Solutions"
+      ],
+      "status": "draft",
+      "id": "diag-4A1D5E",
+      "createdAt": "2026-09-12T05:34:50.487Z"
+    },
+    {
+      "clientName": "Growth Diagnostic Inquirer",
+      "company": "B2B Services & Consulting Enterprise",
+      "stage": "GROW",
+      "bottlenecks": [
+        "leads",
+        "2-10 team members"
+      ],
+      "computedRoi": "+120% Qualified Pipeline Growth",
+      "hoursRecoverable": "22 hrs / week",
+      "targetArr": "$720k ARR",
+      "priorityStack": [
+        "Growth Marketing & Technical SEO",
+        "AI Customer Agent (24/7 Lead Capture)",
+        "Conversion Funnels"
+      ],
+      "status": "draft",
+      "id": "diag-YGVCUJ",
+      "createdAt": "2026-09-12T05:01:10.364Z"
+    },
+    {
+      "clientName": "Growth Diagnostic Inquirer",
+      "company": "B2B Services & Consulting Enterprise",
+      "stage": "GROW",
+      "bottlenecks": [
+        "leads",
+        "2-10 team members"
+      ],
+      "computedRoi": "+120% Qualified Pipeline Growth",
+      "hoursRecoverable": "22 hrs / week",
+      "targetArr": "$720k ARR",
+      "priorityStack": [
+        "Growth Marketing & Technical SEO",
+        "AI Customer Agent (24/7 Lead Capture)",
+        "Conversion Funnels"
+      ],
+      "status": "draft",
+      "id": "diag-9Y8L3V",
+      "createdAt": "2026-09-12T05:00:55.197Z"
+    },
+    {
+      "id": "diag-apex-01",
+      "clientName": "Sarah Connor",
+      "company": "Apex Fintech Solutions",
+      "stage": "GROW",
+      "bottlenecks": [
+        "Low Conversion",
+        "Disjointed Agencies",
+        "Lack of Predictive Leads"
+      ],
+      "computedRoi": "4.8x ROI ($340k Net Projected Addition)",
+      "hoursRecoverable": "24 hrs / week",
+      "targetArr": "$1.8M ARR",
+      "priorityStack": [
+        "Growth Marketing (Service 2)",
+        "AI Customer Agent (Service 3)",
+        "Executive Dashboards (Service 5)"
+      ],
+      "createdAt": "2026-09-09T04:15:08.610Z",
+      "status": "presented"
+    },
+    {
+      "id": "diag-nova-02",
+      "clientName": "Marcus Thorne",
+      "company": "NovaCare Telehealth",
+      "stage": "AUTOMATE",
+      "bottlenecks": [
+        "Manual Intake Staff Drag",
+        "No 24/7 Patient Triage"
+      ],
+      "computedRoi": "5.2x ROI (Cost reduction + capacity doubling)",
+      "hoursRecoverable": "38 hrs / week",
+      "targetArr": "$2.5M ARR",
+      "priorityStack": [
+        "Workflow Automation (Service 4)",
+        "AI Solutions (Service 3)",
+        "Web & Product Portal (Service 1)"
+      ],
+      "createdAt": "2026-09-11T04:15:08.610Z",
+      "status": "reviewed"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "wf-01",
+      "name": "Instant Inbound Lead Triage & Enrichment",
+      "trigger": "New Contact Form Submission",
+      "actions": [
+        "Validate Email & Domain Authority",
+        "Generate 90-Day AI Growth Dossier",
+        "Alert Team Slack Channel #growth-leads"
+      ],
+      "status": "active",
+      "runsCount": 147,
+      "lastRunAt": "2026-09-12T05:48:51.264Z",
+      "category": "lead_enrichment"
+    },
+    {
+      "id": "wf-02",
+      "name": "24/7 Customer Agent Escalation Sync",
+      "trigger": "User intent = \"Urgent Strategy Consultation\"",
+      "actions": [
+        "Extract Company & Target ARR",
+        "Pre-populate CRM record",
+        "Send Calendar Booking Link"
+      ],
+      "status": "active",
+      "runsCount": 388,
+      "lastRunAt": "2026-09-12T04:15:08.610Z",
+      "category": "agent_dispatch"
+    },
+    {
+      "id": "wf-03",
+      "name": "Post-Call Diagnostic Dossier Auto-Mailer",
+      "trigger": "Diagnostic Form Completed",
+      "actions": [
+        "Compile Executive Blueprint",
+        "Send PDF Summary to Founder Email",
+        "Schedule 48h Followup"
+      ],
+      "status": "active",
+      "runsCount": 96,
+      "lastRunAt": "2026-09-12T06:28:24.354Z",
+      "category": "nurture"
+    }
+  ],
+  "conversations": [],
+  "auditLogs": [
+    {
+      "id": "aud-6voaiyx",
+      "timestamp": "2026-09-12T06:28:24.354Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-03",
+        "name": "Post-Call Diagnostic Dossier Auto-Mailer"
+      }
+    },
+    {
+      "id": "aud-te60lpj",
+      "timestamp": "2026-09-12T06:28:24.353Z",
+      "actor": "System",
+      "action": "DIAGNOSTIC_SAVED",
+      "details": {
+        "diagId": "diag-L3FY1X",
+        "company": "B2B Services & Consulting Enterprise"
+      }
+    },
+    {
+      "id": "aud-i75ewbi",
+      "timestamp": "2026-09-12T05:48:51.264Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-01",
+        "name": "Instant Inbound Lead Triage & Enrichment"
+      }
+    },
+    {
+      "id": "aud-k1t6en0",
+      "timestamp": "2026-09-12T05:48:49.474Z",
+      "actor": "System",
+      "action": "WORKFLOW_STATUS_TOGGLED",
+      "details": {
+        "workflowId": "wf-01",
+        "status": "active"
+      }
+    },
+    {
+      "id": "aud-edfp68t",
+      "timestamp": "2026-09-12T05:48:47.844Z",
+      "actor": "System",
+      "action": "WORKFLOW_STATUS_TOGGLED",
+      "details": {
+        "workflowId": "wf-01",
+        "status": "paused"
+      }
+    },
+    {
+      "id": "aud-zeu2a8q",
+      "timestamp": "2026-09-12T05:48:43.914Z",
+      "actor": "Jonnada Mahesh",
+      "action": "AUTH_LOGIN",
+      "details": {
+        "email": "jonnadamahesh2005@gmail.com",
+        "role": "admin",
+        "userId": "usr-founder-mahesh"
+      },
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "aud-mdo74r7",
+      "timestamp": "2026-09-12T05:48:41.390Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-03",
+        "name": "Post-Call Diagnostic Dossier Auto-Mailer"
+      }
+    },
+    {
+      "id": "aud-y4lc9y9",
+      "timestamp": "2026-09-12T05:48:41.390Z",
+      "actor": "System",
+      "action": "DIAGNOSTIC_SAVED",
+      "details": {
+        "diagId": "diag-5HH6X9",
+        "company": "Mercer Tech"
+      }
+    },
+    {
+      "id": "aud-nor47v3",
+      "timestamp": "2026-09-12T05:48:39.508Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-01",
+        "name": "Instant Inbound Lead Triage & Enrichment"
+      }
+    },
+    {
+      "id": "aud-bmwbq6p",
+      "timestamp": "2026-09-12T05:48:39.508Z",
+      "actor": "System",
+      "action": "LEAD_CREATED",
+      "details": {
+        "leadId": "lead-E9M897",
+        "email": "alex@mercergrowth.com"
+      }
+    },
+    {
+      "id": "aud-qsga5gk",
+      "timestamp": "2026-09-12T05:34:55.313Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-01",
+        "name": "Instant Inbound Lead Triage & Enrichment"
+      }
+    },
+    {
+      "id": "aud-3gf9bh6",
+      "timestamp": "2026-09-12T05:34:50.488Z",
+      "actor": "System",
+      "action": "DIAGNOSTIC_SAVED",
+      "details": {
+        "diagId": "diag-4A1D5E",
+        "company": "QuantumFlux"
+      }
+    },
+    {
+      "id": "aud-t918ifg",
+      "timestamp": "2026-09-12T05:34:47.403Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-01",
+        "name": "Instant Inbound Lead Triage & Enrichment"
+      }
+    },
+    {
+      "id": "aud-jcid6b6",
+      "timestamp": "2026-09-12T05:34:47.402Z",
+      "actor": "System",
+      "action": "LEAD_CREATED",
+      "details": {
+        "leadId": "lead-368FG1",
+        "email": "alex@quantumflux.dev"
+      }
+    },
+    {
+      "id": "aud-gwph70c",
+      "timestamp": "2026-09-12T05:34:36.747Z",
+      "actor": "Jonnada Mahesh",
+      "action": "AUTH_LOGIN",
+      "details": {
+        "email": "jonnadamahesh2005@gmail.com",
+        "role": "admin",
+        "userId": "usr-founder-mahesh"
+      },
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "aud-nbucetd",
+      "timestamp": "2026-09-12T05:01:10.364Z",
+      "actor": "System",
+      "action": "DIAGNOSTIC_SAVED",
+      "details": {
+        "diagId": "diag-YGVCUJ",
+        "company": "B2B Services & Consulting Enterprise"
+      }
+    },
+    {
+      "id": "aud-qnqr08s",
+      "timestamp": "2026-09-12T05:00:55.197Z",
+      "actor": "System",
+      "action": "DIAGNOSTIC_SAVED",
+      "details": {
+        "diagId": "diag-9Y8L3V",
+        "company": "B2B Services & Consulting Enterprise"
+      }
+    },
+    {
+      "id": "aud-hshb17m",
+      "timestamp": "2026-09-12T04:44:00.941Z",
+      "actor": "System",
+      "action": "LEAD_UPDATED",
+      "details": {
+        "leadId": "lead-849202",
+        "updates": {
+          "status": "closed_won"
+        }
+      }
+    },
+    {
+      "id": "aud-i763dyk",
+      "timestamp": "2026-09-12T04:43:58.094Z",
+      "actor": "System",
+      "action": "LEAD_UPDATED",
+      "details": {
+        "leadId": "lead-849203",
+        "updates": {
+          "status": "closed_won"
+        }
+      }
+    },
+    {
+      "id": "aud-w3ulc12",
+      "timestamp": "2026-09-12T04:37:47.268Z",
+      "actor": "Sarah Connor",
+      "action": "AUTH_LOGIN",
+      "details": {
+        "email": "sarah@apexfintech.com",
+        "role": "client",
+        "userId": "usr-client-03"
+      },
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "aud-diqzai4",
+      "timestamp": "2026-09-12T04:15:19.726Z",
+      "actor": "System",
+      "action": "WORKFLOW_TRIGGERED",
+      "details": {
+        "workflowId": "wf-01",
+        "name": "Instant Inbound Lead Triage & Enrichment"
+      }
+    },
+    {
+      "id": "audit-001",
+      "timestamp": "2026-09-12T04:15:08.610Z",
+      "actor": "System Bootstrapper",
+      "action": "DATABASE_INITIALIZATION",
+      "details": {
+        "collections": [
+          "users",
+          "leads",
+          "diagnostics",
+          "workflows"
+        ]
+      }
+    }
+  ],
+  "metrics": {
+    "totalRequests": 173,
+    "startTime": "2026-09-12T04:15:08.610Z"
+  }
+}

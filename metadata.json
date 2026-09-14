@@ -1,0 +1,6 @@
+{
+  "name": "Maha Growth",
+  "description": "Real-time business data analytics and intelligence engine. Ingest PDF, PowerPoint, Excel sheets, and live streams with instant Power BI export, anomaly detection, and autonomous operational telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

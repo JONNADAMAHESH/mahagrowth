@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maha Growth — Real-Time Data Analytics &amp; Business Intelligence Platform</title>
+    <meta name="description" content="Real-time business data analytics and intelligence engine. Ingest PDF, PowerPoint, Excel sheets, and live streams with instant Power BI export, anomaly detection, and autonomous operational telemetry." />
+    <meta name="keywords" content="Maha Growth, Real-Time Data Analytics, Business Intelligence, Power BI Export, Excel Analytics, PDF Ingestion, PowerPoint Data Extraction, Startup Analytics, Live Telemetry" />
+    <meta name="author" content="Maha Growth Technologies, Inc." />
+    <meta name="theme-color" content="#0a0e17" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mahagrowth.com/" />
+    <meta property="og:title" content="Maha Growth — Real-Time Data Analytics &amp; Business Intelligence Platform" />
+    <meta property="og:description" content="Real-time business data analytics and intelligence engine. Ingest PDF, PowerPoint, Excel sheets, and live streams with instant Power BI export, anomaly detection, and autonomous operational telemetry." />
+    <meta property="og:image" content="/founder-photo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maha Growth — Real-Time Data Analytics &amp; Business Intelligence Platform" />
+    <meta name="twitter:description" content="Real-time business data analytics and intelligence engine. Ingest PDF, PowerPoint, Excel sheets, and live streams with instant Power BI export, anomaly detection, and autonomous operational telemetry." />
+
+    <!-- Google Fonts for elevated high-tech typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Suppress benign Vite HMR WebSocket connection errors behind sandbox reverse proxy -->
+    <script>
+      (function() {
+        var isViteWsError = function(err) {
+          if (!err) return false;
+          var msg = (typeof err === 'string' ? err : err.message || err.reason || err.toString?.() || '').toLowerCase();
+          return msg.indexOf('websocket') !== -1 || msg.indexOf('ws://') !== -1 || msg.indexOf('wss://') !== -1 || msg.indexOf('[vite]') !== -1;
+        };
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isViteWsError(event.reason)) {
+            event.preventDefault();
+            if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+          }
+        }, true);
+
+        window.addEventListener('error', function(event) {
+          if (isViteWsError(event.error) || isViteWsError(event.message)) {
+            event.preventDefault();
+            if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://mahagrowth.com/#organization",
+          "name": "Maha Growth",
+          "url": "https://mahagrowth.com",
+          "logo": "https://mahagrowth.com/logo.png",
+          "description": "Turn your business into a smarter, faster-growing business. Maha Growth brings your business tools, automation, analytics, and intelligent workflows together in one unified platform.",
+          "knowsAbout": ["Business Growth Platform", "Intelligent Automation", "Autonomous Agents", "Cloud Infrastructure", "Revenue Telemetry"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://mahagrowth.com/#website",
+          "url": "https://mahagrowth.com",
+          "name": "Maha Growth",
+          "publisher": {
+            "@id": "https://mahagrowth.com/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Maha Growth Platform",
+          "operatingSystem": "Cloud / Distributed",
+          "applicationCategory": "BusinessApplication, DeveloperApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="antialiased selection:bg-cyan-400 selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

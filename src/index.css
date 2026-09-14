@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================
+   FUTURISTIC DESIGN TOKENS & SYSTEM THEME
+   ========================================================= */
+
+@theme {
+  --color-cyber-cyan: #00e5ff;
+  --color-cyber-blue: #3b82f6;
+  --color-cyber-purple: #a855f7;
+  --color-cyber-emerald: #10b981;
+  --color-cyber-dark: #07090e;
+
+  --font-sans:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  --font-mono:
+    "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* =========================================================
+   THEME PALETTES: DARK (CYBER/EMERALD/MIDNIGHT) & LIGHT (TITANIUM)
+   ========================================================= */
+
+@layer base {
+  /* Default: HyperScale Pro (Real-Time Startup Dark) */
+  :root,
+  [data-theme="cyber"],
+  .dark {
+    color-scheme: dark;
+
+    --bg-canvas: #080c16;
+    --bg-surface: #0e1424;
+    --bg-card: rgba(14, 20, 36, 0.85);
+    --bg-card-hover: rgba(22, 32, 56, 0.95);
+    --bg-input: #0b1120;
+
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.16);
+    --border-accent: #3b82f6;
+
+    --text-heading: #ffffff;
+    --text-body: #94a3b8;
+    --text-muted: #64748b;
+    --text-faint: #475569;
+
+    --accent-glow: 0 0 25px rgba(59, 130, 246, 0.25);
+    --accent-color: #3b82f6;
+  }
+
+  /* Matrix Quantum (Neon Emerald Dark) */
+  [data-theme="emerald"] {
+    color-scheme: dark;
+
+    --bg-canvas: #030a07;
+    --bg-surface: #061711;
+    --bg-card: rgba(7, 24, 18, 0.85);
+    --bg-card-hover: rgba(10, 36, 26, 0.95);
+    --bg-input: #04120c;
+
+    --border-subtle: rgba(16, 185, 129, 0.15);
+    --border-medium: rgba(16, 185, 129, 0.3);
+    --border-accent: #10b981;
+
+    --text-heading: #f0fdf4;
+    --text-body: #a7f3d0;
+    --text-muted: #6ee7b7;
+    --text-faint: #34d399;
+
+    --accent-glow: 0 0 25px rgba(16, 185, 129, 0.25);
+    --accent-color: #10b981;
+  }
+
+  /* Cosmic Ultraviolet (Dark Purple Midnight) */
+  [data-theme="midnight"] {
+    color-scheme: dark;
+
+    --bg-canvas: #090514;
+    --bg-surface: #130c26;
+    --bg-card: rgba(20, 13, 38, 0.85);
+    --bg-card-hover: rgba(30, 20, 56, 0.95);
+    --bg-input: #0f0a20;
+
+    --border-subtle: rgba(168, 85, 247, 0.15);
+    --border-medium: rgba(168, 85, 247, 0.3);
+    --border-accent: #a855f7;
+
+    --text-heading: #faf5ff;
+    --text-body: #d8b4fe;
+    --text-muted: #c084fc;
+    --text-faint: #a855f7;
+
+    --accent-glow: 0 0 25px rgba(168, 85, 247, 0.25);
+    --accent-color: #a855f7;
+  }
+
+  /* Titanium Luminous (Architectural Light Mode) */
+  [data-theme="titanium"],
+  .light {
+    color-scheme: light;
+
+    --bg-canvas: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-input: #ffffff;
+
+    --border-subtle: #e2e8f0;
+    --border-medium: #cbd5e1;
+    --border-accent: #2563eb;
+
+    --text-heading: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --text-faint: #94a3b8;
+
+    --accent-glow: 0 4px 20px rgba(37, 99, 235, 0.15);
+    --accent-color: #2563eb;
+  }
+
+  /* =======================================================
+     GLOBAL RESET & SMOOTH SCROLLING
+     ======================================================= */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-canvas);
+    color: var(--text-body);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    background-color: var(--bg-canvas);
+    color: var(--text-body);
+    overflow-x: hidden;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  ::selection {
+    background: #00e5ff;
+    color: #07090e;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: var(--font-mono);
+  }
+}
+
+/* =========================================================
+   FUTURISTIC UTILITIES & AESTHETICS
+   ========================================================= */
+
+/* Cyber Glass Panel */
+.cyber-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Cyber Glow Gradients */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+}
+
+/* Animated Tech Grid Background */
+.tech-grid-bg {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    #000 70%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    #000 70%,
+    transparent 100%
+  );
+}
+
+.light .tech-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Futuristic Radar Pulse */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-radar {
+  animation: radar-pulse 3s infinite ease-in-out;
+}
+
+/* Futuristic HUD Corner Reticles */
+.hud-corner {
+  position: relative;
+}
+
+.hud-corner::before,
+.hud-corner::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--accent-color);
+  pointer-events: none;
+}
+
+.hud-corner::before {
+  top: 0;
+  left: 0;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.hud-corner::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+/* Perspective Grid Floor (Monochrome / Cyber) */
+.perspective-grid-floor {
+  position: absolute;
+  bottom: -120px;
+  left: -20%;
+  right: -20%;
+  height: 380px;
+  background-image:
+    linear-gradient(to right, rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(600px) rotateX(72deg);
+  transform-origin: 50% 100%;
+  mask-image: radial-gradient(
+    ellipse 65% 55% at 50% 50%,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 65% 55% at 50% 50%,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}

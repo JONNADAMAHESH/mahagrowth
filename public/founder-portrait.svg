@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient (Corporate Executive Studio) -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8EEF5"/>
+      <stop offset="40%" stop-color="#D9E2EC"/>
+      <stop offset="70%" stop-color="#CCD7E4"/>
+      <stop offset="100%" stop-color="#B8C7D9"/>
+    </linearGradient>
+
+    <!-- Studio window bokeh lights -->
+    <radialGradient id="bokeh1" cx="30%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bokeh2" cx="75%" cy="35%" r="35%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Skin Tones -->
+    <linearGradient id="skinBase" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#C58B65"/>
+      <stop offset="50%" stop-color="#B37752"/>
+      <stop offset="100%" stop-color="#9C6240"/>
+    </linearGradient>
+    <radialGradient id="skinHighlight" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#D49973" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#B37752" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8F5435" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="neckShadow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#6E3A20"/>
+      <stop offset="100%" stop-color="#9C6240"/>
+    </linearGradient>
+
+    <!-- Hair Shading -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22252C"/>
+      <stop offset="35%" stop-color="#15171C"/>
+      <stop offset="100%" stop-color="#0B0C0E"/>
+    </linearGradient>
+
+    <!-- Suit & Fabric Shading -->
+    <linearGradient id="suitGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#243048"/>
+      <stop offset="50%" stop-color="#182033"/>
+      <stop offset="100%" stop-color="#0E1321"/>
+    </linearGradient>
+    <linearGradient id="lapelGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E3C59"/>
+      <stop offset="100%" stop-color="#141B2B"/>
+    </linearGradient>
+    <linearGradient id="lapelGradRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2E3C59"/>
+      <stop offset="100%" stop-color="#141B2B"/>
+    </linearGradient>
+
+    <!-- Tie Shading -->
+    <linearGradient id="tieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#203358"/>
+      <stop offset="40%" stop-color="#15223C"/>
+      <stop offset="100%" stop-color="#0B1324"/>
+    </linearGradient>
+
+    <!-- Shirt Shading -->
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F3F6FA"/>
+      <stop offset="100%" stop-color="#E1E7F0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Office Bokeh Scene -->
+  <rect width="800" height="900" fill="url(#bgGrad)"/>
+  <rect x="120" y="40" width="160" height="320" rx="20" fill="url(#bokeh1)"/>
+  <rect x="520" y="80" width="200" height="380" rx="30" fill="url(#bokeh2)"/>
+  <!-- Modern window pane hint lines in blurred background -->
+  <line x1="280" y1="0" x2="280" y2="520" stroke="#FFFFFF" stroke-width="8" stroke-opacity="0.35"/>
+  <line x1="500" y1="0" x2="500" y2="520" stroke="#FFFFFF" stroke-width="8" stroke-opacity="0.35"/>
+  <line x1="0" y1="360" x2="800" y2="360" stroke="#FFFFFF" stroke-width="6" stroke-opacity="0.25"/>
+
+  <!-- SUIT JACKET & TORSO (Dark Navy Business Suit) -->
+  <g id="suit-body">
+    <!-- Main suit shoulders & body base -->
+    <path d="M 120 900 L 160 620 L 250 560 L 330 550 L 400 560 L 470 550 L 550 560 L 640 620 L 680 900 Z" fill="url(#suitGrad)"/>
+
+    <!-- Left shoulder contour & depth -->
+    <path d="M 80 900 C 90 730 140 610 240 560 L 330 550 L 320 720 L 160 900 Z" fill="#141B2C"/>
+    <!-- Right shoulder contour & depth -->
+    <path d="M 720 900 C 710 730 660 610 560 560 L 470 550 L 480 720 L 640 900 Z" fill="#121827"/>
+  </g>
+
+  <!-- SHIRT (Crisp White Collared Dress Shirt) -->
+  <g id="white-shirt">
+    <!-- Chest V triangle base -->
+    <polygon points="340,540 460,540 430,730 370,730" fill="url(#shirtGrad)"/>
+    
+    <!-- Left Collar wing -->
+    <polygon points="335,535 400,640 375,645 315,555" fill="#FFFFFF" stroke="#D3DCE8" stroke-width="1.5"/>
+    <!-- Right Collar wing -->
+    <polygon points="465,535 400,640 425,645 485,555" fill="#FAFCFF" stroke="#C8D3E0" stroke-width="1.5"/>
+  </g>
+
+  <!-- NECKTIE (Tailored Dark Blue Necktie) -->
+  <g id="necktie">
+    <!-- Tie Knot -->
+    <polygon points="380,620 420,620 412,658 388,658" fill="#1E2F52"/>
+    <path d="M 380 620 Q 400 624 420 620 L 412 658 Q 400 661 388 658 Z" fill="url(#tieGrad)"/>
+    <!-- Tie knot highlight -->
+    <path d="M 388 622 Q 400 626 412 622 L 406 648 L 394 648 Z" fill="#283C66" opacity="0.6"/>
+
+    <!-- Tie Body / Blade -->
+    <polygon points="388,658 412,658 438,870 400,900 362,870" fill="url(#tieGrad)"/>
+    <!-- Tie center crease highlight -->
+    <path d="M 400 658 L 400 890" stroke="#2A3F6C" stroke-width="2.5" opacity="0.7"/>
+  </g>
+
+  <!-- SUIT LAPELS OVER SHIRT -->
+  <g id="suit-lapels">
+    <!-- Left Lapel -->
+    <polygon points="260,560 380,720 325,900 230,760 215,640" fill="url(#lapelGradLeft)" stroke="#32405E" stroke-width="1.5"/>
+    <polygon points="260,560 380,720 372,728 250,565" fill="#3B4C70" opacity="0.5"/>
+    
+    <!-- Right Lapel -->
+    <polygon points="540,560 420,720 475,900 570,760 585,640" fill="url(#lapelGradRight)" stroke="#32405E" stroke-width="1.5"/>
+    <polygon points="540,560 420,720 428,728 550,565" fill="#3B4C70" opacity="0.4"/>
+
+    <!-- Suit Button detail -->
+    <circle cx="400" cy="780" r="11" fill="#0C101A" stroke="#222B3D" stroke-width="2.5"/>
+    <circle cx="400" cy="780" r="3" fill="#1C263A"/>
+  </g>
+
+  <!-- NECK & THROAT -->
+  <g id="neck">
+    <path d="M 345 460 L 345 560 Q 400 590 455 560 L 455 460 Z" fill="url(#skinBase)"/>
+    <path d="M 345 460 Q 400 520 455 460 L 455 520 Q 400 560 345 520 Z" fill="url(#neckShadow)" opacity="0.55"/>
+  </g>
+
+  <!-- HEAD & EARS -->
+  <g id="head-ears">
+    <!-- Left Ear -->
+    <ellipse cx="260" cy="405" rx="20" ry="38" transform="rotate(-8 260 405)" fill="#B87C57"/>
+    <path d="M 264 385 Q 252 405 264 425 Q 268 410 264 385" fill="#8C4E30"/>
+    
+    <!-- Right Ear -->
+    <ellipse cx="540" cy="405" rx="20" ry="38" transform="rotate(8 540 405)" fill="#B87C57"/>
+    <path d="M 536 385 Q 548 405 536 425 Q 532 410 536 385" fill="#8C4E30"/>
+
+    <!-- Face Base Contour (Smooth, rounded jaw with defined chin) -->
+    <path d="M 270 340 C 265 440 310 520 400 525 C 490 520 535 440 530 340 C 530 250 490 200 400 200 C 310 200 270 250 270 340 Z" fill="url(#skinBase)"/>
+    <!-- Face volumetric highlight -->
+    <ellipse cx="400" cy="370" rx="140" ry="120" fill="url(#skinHighlight)"/>
+  </g>
+
+  <!-- HAIR BASE & BACK -->
+  <g id="hair-base">
+    <!-- Back Hair volume -->
+    <path d="M 255 360 C 240 280 270 170 400 160 C 530 170 560 280 545 360 C 530 310 530 230 490 200 C 440 180 360 180 310 200 C 270 230 270 310 255 360 Z" fill="url(#hairGrad)"/>
+  </g>
+
+  <!-- FACIAL FEATURES -->
+  <g id="facial-features">
+    <!-- Eyebrows (Strong, defined, natural black arches) -->
+    <path d="M 315 330 Q 355 318 380 328 Q 350 324 315 330 Z" fill="#15171B"/>
+    <path d="M 485 330 Q 445 318 420 328 Q 450 324 485 330 Z" fill="#15171B"/>
+
+    <!-- Left Eye -->
+    <g id="left-eye">
+      <!-- White sclera -->
+      <path d="M 320 355 Q 350 340 376 355 Q 350 370 320 355 Z" fill="#F8FAFC"/>
+      <!-- Deep warm brown iris -->
+      <circle cx="350" cy="355" r="13" fill="#2E1B12"/>
+      <circle cx="350" cy="355" r="7" fill="#0C0806"/>
+      <!-- Specular reflection / life spark -->
+      <circle cx="347" cy="352" r="3.5" fill="#FFFFFF"/>
+      <!-- Upper eyelid lash line -->
+      <path d="M 318 355 Q 350 338 378 355" stroke="#121418" stroke-width="3" fill="none"/>
+      <!-- Subtle under-eye crease -->
+      <path d="M 328 368 Q 350 374 370 368" stroke="#8E5235" stroke-width="1.5" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- Right Eye -->
+    <g id="right-eye">
+      <!-- White sclera -->
+      <path d="M 480 355 Q 450 340 424 355 Q 450 370 480 355 Z" fill="#F8FAFC"/>
+      <!-- Deep warm brown iris -->
+      <circle cx="450" cy="355" r="13" fill="#2E1B12"/>
+      <circle cx="450" cy="355" r="7" fill="#0C0806"/>
+      <!-- Specular reflection / life spark -->
+      <circle cx="447" cy="352" r="3.5" fill="#FFFFFF"/>
+      <!-- Upper eyelid lash line -->
+      <path d="M 482 355 Q 450 338 422 355" stroke="#121418" stroke-width="3" fill="none"/>
+      <!-- Subtle under-eye crease -->
+      <path d="M 472 368 Q 450 374 430 368" stroke="#8E5235" stroke-width="1.5" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- Nose -->
+    <g id="nose">
+      <!-- Soft bridge shadow -->
+      <path d="M 390 345 L 388 410 Q 400 426 412 410 L 410 345" fill="none" stroke="#A06341" stroke-width="2" opacity="0.45"/>
+      <!-- Nose tip & nostrils contour -->
+      <path d="M 382 418 Q 400 426 418 418" stroke="#7A3D22" stroke-width="2.5" fill="none"/>
+      <!-- Left nostril wing -->
+      <path d="M 374 416 Q 380 414 386 420" stroke="#68311B" stroke-width="2.5" fill="none"/>
+      <!-- Right nostril wing -->
+      <path d="M 426 416 Q 420 414 414 420" stroke="#68311B" stroke-width="2.5" fill="none"/>
+      <!-- Subtle nose tip highlight -->
+      <circle cx="400" cy="412" r="6" fill="#D69B76" opacity="0.6"/>
+    </g>
+
+    <!-- Youthful Neat Mustache -->
+    <g id="mustache" opacity="0.75">
+      <path d="M 366 440 Q 400 436 434 440 Q 400 445 366 440 Z" fill="#1C1F26"/>
+    </g>
+
+    <!-- Lips (Natural, confident, subtle warm executive smile) -->
+    <g id="lips">
+      <!-- Upper lip -->
+      <path d="M 364 454 Q 382 448 400 452 Q 418 448 436 454 Q 400 460 364 454 Z" fill="#88452D"/>
+      <!-- Lower lip with soft volume highlight -->
+      <path d="M 370 456 Q 400 472 430 456 Q 400 460 370 456 Z" fill="#9E543A"/>
+      <ellipse cx="400" cy="460" rx="16" ry="3" fill="#B7694D" opacity="0.6"/>
+      <!-- Lip line -->
+      <path d="M 364 454 Q 400 457 436 454" stroke="#5C2616" stroke-width="1.8" fill="none"/>
+      <!-- Chin cleft / under-lip shadow -->
+      <path d="M 388 478 Q 400 482 412 478" stroke="#8C4E30" stroke-width="2.5" fill="none" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- HAIR (Styled modern front fringe & side-parting matching the photograph) -->
+  <g id="hair-front">
+    <!-- Main top & front bangs contour -->
+    <path d="M 268 280 
+             C 270 200 320 165 400 165 
+             C 480 165 530 200 532 280 
+             C 530 295 510 270 480 275
+             C 450 280 430 300 390 295 
+             C 360 290 340 310 310 295 
+             C 285 285 272 300 268 280 Z" 
+          fill="url(#hairGrad)"/>
+
+    <!-- Textured modern fringe locks over forehead -->
+    <path d="M 285 270 Q 320 305 345 285 Q 365 310 395 288 Q 425 310 455 285 Q 490 300 515 265 Q 480 250 400 250 Q 320 250 285 270 Z" fill="#1C1E24"/>
+    <path d="M 330 275 Q 360 298 385 278" stroke="#2D323E" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M 400 275 Q 430 298 460 276" stroke="#2D323E" stroke-width="3" fill="none" opacity="0.7"/>
+
+    <!-- Subtle healthy hair sheen -->
+    <path d="M 320 210 Q 400 190 480 210 Q 400 200 320 210 Z" fill="#3D4454" opacity="0.45"/>
+  </g>
+
+  <!-- Executive lighting overlay vignette for depth and polish -->
+  <rect width="800" height="900" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.1"/>
+</svg>
