@@ -491,7 +491,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
         </div>
 
         {/* ROI and Case Studies */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="p-8 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
             <LineChart className="w-8 h-8 text-emerald-500 mb-6" />
             <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">ROI Attribution</h3>
@@ -523,6 +523,52 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 <span className="text-emerald-400">$85 → $32</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Comprehensive Omnichannel AdTech & Media Buying Suite */}
+        <div className="p-10 rounded-3xl bg-neutral-950 border border-neutral-800 text-white shadow-2xl relative overflow-hidden space-y-8">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="text-center max-w-3xl mx-auto space-y-3 relative z-10">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-mono font-semibold">
+              <Cpu className="w-3.5 h-3.5" /> ENTERPRISE ADTECH STACK &amp; MEDIA BUYING
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+              Unified Omnichannel Advertising &amp; Media Execution Platform
+            </h3>
+            <p className="text-sm text-neutral-400 leading-relaxed">
+              Maha Growth integrates your complete advertising ecosystem into a single autonomous math-driven engine.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2 relative z-10 font-mono text-xs">
+            {[
+              "Performance Marketing Platform",
+              "Universal Media Buying",
+              "Search Marketing Platform",
+              "Universal Tag Management",
+              "Search Auto-bidding",
+              "Retargeting",
+              "Demand Side Platform - OSP",
+              "Social Media Advertising",
+              "Online Media",
+              "Google Ads",
+              "Facebook Ads",
+              "AI",
+              "Optimization",
+              "Cross Channel Advertising",
+              "Amazon Ads",
+              "Marketplace Ads",
+              "Attribution",
+              "AdServer"
+            ].map((tech, idx) => (
+              <div key={idx} className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-cyan-500/50 flex flex-col items-center text-center gap-2 transition-all group">
+                <div className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm group-hover:scale-110 transition-transform">
+                  ⚡
+                </div>
+                <span className="text-neutral-300 font-medium leading-tight">{tech}</span>
+              </div>
+            ))}
           </div>
         </div>
 

@@ -17,6 +17,7 @@ import {
   X,
   MessageSquare,
   UserCircle,
+  Target,
 } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
@@ -44,6 +45,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
   }> = [
     { id: "home", label: "Home", icon: Home },
     { id: "data-studio", label: "Data Studio", icon: Database },
+    { id: "performance", label: "Performance", icon: Target },
     { id: "diagnostic", label: "Real-Time", icon: Activity },
     { id: "services", label: "Services", icon: Layers },
     { id: "ai-advantage", label: "AI Advantage", icon: Bot },

@@ -14,6 +14,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { LoginPage } from "./pages/LoginPage";
 import { ClientPortalPage } from "./pages/ClientPortalPage";
 import { DataStudioPage } from "./pages/DataStudioPage";
+import { PerformanceMarketingPage } from "./pages/PerformanceMarketingPage";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import { GrowthDiagnosticTool } from "./components/GrowthDiagnosticTool";
@@ -104,6 +105,10 @@ export default function App() {
 
                   {currentPage === "data-studio" && (
                     <DataStudioPage onNavigate={handleNavigate} />
+                  )}
+
+                  {currentPage === "performance" && (
+                    <PerformanceMarketingPage onNavigate={handleNavigate} />
                   )}
 
                   {currentPage === "services" && (

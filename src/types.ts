@@ -1,6 +1,7 @@
 export type PageId =
   | "home"
   | "data-studio"
+  | "performance"
   | "services"
   | "ai-advantage"
   | "journey"
