@@ -5,14 +5,52 @@ import { Workspace, Integration, AiAction } from "../types/database";
 
 export function useTenantData() {
   const { user } = useAuth();
-  const [workspace, setWorkspace] = useState<Workspace | null>(null);
-  const [integrations, setIntegrations] = useState<Integration[]>([]);
-  const [aiActions, setAiActions] = useState<AiAction[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [workspace, setWorkspace] = useState<Workspace | null>({
+    id: "demo-ws-1",
+    user_id: "demo-user",
+    company_name: "Apex Growth Labs (Demo)",
+    growth_score: 88,
+    created_at: new Date().toISOString()
+  });
+  const [integrations, setIntegrations] = useState<Integration[]>([
+    { id: "int-1", workspace_id: "demo-ws-1", provider: "google_ads", status: "connected", last_sync_at: new Date().toISOString() },
+    { id: "int-2", workspace_id: "demo-ws-1", provider: "meta_ads", status: "connected", last_sync_at: new Date().toISOString() },
+    { id: "int-3", workspace_id: "demo-ws-1", provider: "stripe", status: "connected", last_sync_at: new Date().toISOString() },
+  ]);
+  const [aiActions, setAiActions] = useState<AiAction[]>([
+    {
+      id: "action-1",
+      workspace_id: "demo-ws-1",
+      title: "Pause Underperforming Ad Group (Google Ads)",
+      description: "Google Ads 'Q3_Retargeting' has a high CPC ($6.40) and 0 conversions over 7 days.",
+      action_type: "pause_campaign",
+      status: "pending",
+      impact_estimate: "Saves $450/week"
+    },
+    {
+      id: "action-2",
+      workspace_id: "demo-ws-1",
+      title: "Increase Lookalike Budget +15% (Meta CAPI)",
+      description: "Meta Ads 'Lookalike_Conversions_Top10' is outperforming baseline CPA by 28%.",
+      action_type: "increase_budget",
+      status: "pending",
+      impact_estimate: "Est. +18 conversions/week"
+    },
+    {
+      id: "action-3",
+      workspace_id: "demo-ws-1",
+      title: "Auto-bid Search Keywords on High-Intent Terms",
+      description: "Shifted $1,200 from broad match to exact high-converting commercial intent search terms.",
+      action_type: "auto_bid",
+      status: "approved",
+      impact_estimate: "+24% Target Impression Share"
+    }
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchTenantData = useCallback(async () => {
-    if (!user || !user.id) {
+    if (!user || !user.id || user.id === "demo-user") {
       setIsLoading(false);
       return;
     }

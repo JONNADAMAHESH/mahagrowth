@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PageId } from "../types";
+import { PartnerIntegrationsMarquee } from "../components/PartnerIntegrationsMarquee";
 import {
   Sparkles,
   Zap,
@@ -16,6 +17,9 @@ import {
   RefreshCw,
   Server,
   DollarSign,
+  TrendingUp,
+  ShieldCheck,
+  Calculator,
 } from "lucide-react";
 
 interface PerformanceMarketingPageProps {
@@ -26,6 +30,13 @@ export const PerformanceMarketingPage: React.FC<PerformanceMarketingPageProps> =
   onNavigate,
 }) => {
   const [activeTab, setActiveTab] = useState<"overview" | "dsp" | "bidding" | "attribution">("overview");
+  const [monthlyAdSpend, setMonthlyAdSpend] = useState<number>(25000);
+
+  // Math simulation for ROAS calculator
+  const estimatedSavings = Math.round(monthlyAdSpend * 0.18);
+  const extraConversions = Math.round((monthlyAdSpend / 75) * 0.28);
+  const projectedExtraRevenue = Math.round(extraConversions * 420);
+  const cacReductionPercent = monthlyAdSpend > 50000 ? 34 : 26;
 
   const technologies = [
     { title: "Performance Marketing Platform", desc: "End-to-end ROI optimization, budget allocation, and real-time scaling.", icon: Target, tag: "Core OS" },
@@ -72,11 +83,82 @@ export const PerformanceMarketingPage: React.FC<PerformanceMarketingPageProps> =
             <ArrowRight className="w-4 h-4" />
           </button>
           <button
-            onClick={() => onNavigate("diagnostic")}
-            className="px-6 py-3.5 rounded-xl bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white font-mono font-semibold text-xs border border-neutral-200 dark:border-neutral-800 cursor-pointer transition-all"
+            onClick={() => onNavigate("portal")}
+            className="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-neutral-950 font-mono font-bold text-xs border border-cyan-500/30 cursor-pointer transition-all shadow-md"
           >
-            Run Ad Spend Audit
+            Try Live Portal Demo
           </button>
+        </div>
+      </div>
+
+      {/* Partner Marquee */}
+      <PartnerIntegrationsMarquee />
+
+      {/* Interactive ROAS & CAC Simulator */}
+      <div className="p-8 sm:p-10 rounded-3xl bg-neutral-950 border border-neutral-800 text-white shadow-2xl relative overflow-hidden space-y-8">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10 border-b border-neutral-800 pb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-bold uppercase tracking-wider mb-1">
+              <Calculator className="w-4 h-4" /> ROAS &amp; CAC Payback Engine
+            </div>
+            <h2 className="text-2xl font-bold tracking-tight text-white">
+              Simulate Your Media Efficiency Gains
+            </h2>
+            <p className="text-xs text-neutral-400 mt-1">
+              Slide your current monthly ad spend to view estimated waste reduction and conversion expansion.
+            </p>
+          </div>
+          <div className="bg-neutral-900 border border-neutral-800 p-4 rounded-2xl shrink-0 font-mono text-center">
+            <span className="text-[10px] text-neutral-500 uppercase block">Monthly Ad Spend</span>
+            <span className="text-2xl font-extrabold text-cyan-400">${monthlyAdSpend.toLocaleString()}</span>
+          </div>
+        </div>
+
+        {/* Spend Slider */}
+        <div className="space-y-3 relative z-10">
+          <div className="flex justify-between text-xs font-mono text-neutral-400">
+            <span>$5,000/mo</span>
+            <span>$50,000/mo</span>
+            <span>$150,000+/mo</span>
+          </div>
+          <input
+            type="range"
+            min={5000}
+            max={150000}
+            step={2500}
+            value={monthlyAdSpend}
+            onChange={(e) => setMonthlyAdSpend(Number(e.target.value))}
+            className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+          />
+        </div>
+
+        {/* Calculated Metrics Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10 font-mono">
+          <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-1">
+            <span className="text-neutral-500 text-[11px] block">Monthly Waste Filtered</span>
+            <span className="text-xl font-bold text-emerald-400">+${estimatedSavings.toLocaleString()}/mo</span>
+            <span className="text-[10px] text-neutral-400 block">Via auto-bidding &amp; bot shield</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-1">
+            <span className="text-neutral-500 text-[11px] block">Projected Extra Pipeline</span>
+            <span className="text-xl font-bold text-cyan-400">+{extraConversions} Conversions</span>
+            <span className="text-[10px] text-neutral-400 block">From lookalike &amp; CAPI cascades</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-1">
+            <span className="text-neutral-500 text-[11px] block">Blended CAC Drop</span>
+            <span className="text-xl font-bold text-amber-400">-{cacReductionPercent}%</span>
+            <span className="text-[10px] text-neutral-400 block">Shapley attribution balance</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-1">
+            <span className="text-neutral-500 text-[11px] block">Annualized Revenue Lift</span>
+            <span className="text-xl font-bold text-purple-400">+${(projectedExtraRevenue * 12).toLocaleString()}</span>
+            <span className="text-[10px] text-neutral-400 block">Estimated net new run-rate</span>
+          </div>
         </div>
       </div>
 
@@ -253,3 +335,4 @@ export const PerformanceMarketingPage: React.FC<PerformanceMarketingPageProps> =
     </div>
   );
 };
+

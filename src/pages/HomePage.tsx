@@ -20,6 +20,7 @@ import { FounderProfileCard } from "../components/FounderProfileCard";
 import { PlatformArchitectureDiagram } from "../components/PlatformArchitectureDiagram";
 import { ProductWorkspaceShowcase } from "../components/ProductWorkspaceShowcase";
 import { WhyMahaSection } from "../components/WhyMahaSection";
+import { PartnerIntegrationsMarquee } from "../components/PartnerIntegrationsMarquee";
 import {
   ArrowRight,
   CheckCircle2,
@@ -211,6 +212,9 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Certified Partner & Data Connectors Ribbon */}
+      <PartnerIntegrationsMarquee />
 
       {/* ========================================================================= */}
       {/* 2. ONE PLATFORM, EVERY GROWTH FUNCTION (System Architecture Diagram) */}

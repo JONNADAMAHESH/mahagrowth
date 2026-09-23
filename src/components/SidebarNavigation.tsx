@@ -38,22 +38,41 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
 }) => {
   const { isDark, toggleDarkLight } = useTheme();
 
-  const navItems: Array<{
-    id: PageId;
-    label: string;
-    icon: React.ElementType;
+  const navSections: Array<{
+    title: string;
+    items: Array<{
+      id: PageId;
+      label: string;
+      icon: React.ElementType;
+      badge?: string;
+    }>;
   }> = [
-    { id: "home", label: "Home", icon: Home },
-    { id: "data-studio", label: "Data Studio", icon: Database },
-    { id: "performance", label: "Performance", icon: Target },
-    { id: "diagnostic", label: "Real-Time", icon: Activity },
-    { id: "services", label: "Services", icon: Layers },
-    { id: "ai-advantage", label: "AI Advantage", icon: Bot },
-    { id: "journey", label: "Growth Journey", icon: Compass },
-    { id: "case-studies", label: "Case Studies", icon: BookOpen },
-    { id: "pricing", label: "Pricing", icon: CreditCard },
-    { id: "about", label: "About", icon: Users },
-    { id: "contact", label: "Contact", icon: Mail },
+    {
+      title: "PLATFORM",
+      items: [
+        { id: "home", label: "Home", icon: Home },
+        { id: "performance", label: "Performance & Ads", icon: Target, badge: "AdTech" },
+        { id: "data-studio", label: "Data Studio", icon: Database },
+        { id: "diagnostic", label: "Real-Time Engine", icon: Activity },
+        { id: "ai-advantage", label: "AI Advantage", icon: Bot },
+      ],
+    },
+    {
+      title: "GROWTH SOLUTIONS",
+      items: [
+        { id: "services", label: "Services & Tech", icon: Layers },
+        { id: "journey", label: "Growth Journey", icon: Compass },
+        { id: "case-studies", label: "Case Studies", icon: BookOpen },
+      ],
+    },
+    {
+      title: "ENTERPRISE",
+      items: [
+        { id: "pricing", label: "Pricing & Plans", icon: CreditCard },
+        { id: "about", label: "About Maha", icon: Users },
+        { id: "contact", label: "Contact Advisory", icon: Mail },
+      ],
+    },
   ];
 
   const handleNavClick = (id: PageId) => {
@@ -93,7 +112,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
  `}
       >
         {/* Logo Area */}
-        <div className="h-20 flex items-center px-6 border-b border-neutral-100 shrink-0">
+        <div className="h-20 flex items-center px-6 border-b border-neutral-100 dark:border-neutral-800/80 shrink-0">
           <div
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => handleNavClick("home")}
@@ -107,64 +126,81 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
           </div>
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex-1 overflow-y-auto py-6 px-4 space-y-1 custom-scrollbar">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = currentPage === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-mono text-sm transition-all group ${
-                  isActive
-                    ? "bg-neutral-100 dark:bg-cyan-500/10 text-neutral-900 dark:text-cyan-400 font-bold"
-                    : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:text-neutral-900 dark:hover:text-white dark:text-white "
-                }`}
-              >
-                <Icon
-                  className={`w-4 h-4 ${isActive ? "text-blue-600 dark:text-cyan-400" : "text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"}`}
-                />
-                <span>{item.label}</span>
-                {isActive && (
-                  <div className="ml-auto w-1 h-4 rounded-full bg-blue-600" />
-                )}
-              </button>
-            );
-          })}
+        {/* Navigation Links Grouped */}
+        <div className="flex-1 overflow-y-auto py-5 px-4 space-y-6 custom-scrollbar">
+          {navSections.map((section, sIdx) => (
+            <div key={sIdx} className="space-y-1">
+              <div className="px-3 pb-1 text-[10px] font-mono font-bold tracking-wider text-neutral-400 dark:text-neutral-500 uppercase">
+                {section.title}
+              </div>
+              {section.items.map((item) => {
+                const Icon = item.icon;
+                const isActive = currentPage === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id)}
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl font-mono text-xs transition-all group ${
+                      isActive
+                        ? "bg-neutral-100 dark:bg-cyan-500/10 text-neutral-900 dark:text-cyan-400 font-bold"
+                        : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:text-neutral-900 dark:hover:text-white"
+                    }`}
+                  >
+                    <Icon
+                      className={`w-4 h-4 shrink-0 ${isActive ? "text-cyan-600 dark:text-cyan-400" : "text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white"}`}
+                    />
+                    <span className="truncate">{item.label}</span>
+                    {item.badge && !isActive && (
+                      <span className="ml-auto px-1.5 py-0.5 rounded text-[9px] font-mono bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
+                        {item.badge}
+                      </span>
+                    )}
+                    {isActive && (
+                      <div className="ml-auto w-1.5 h-3.5 rounded-full bg-cyan-500" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          ))}
         </div>
 
         {/* Bottom Controls Area */}
-        <div className="p-4 border-t border-neutral-100 space-y-2 shrink-0">
+        <div className="p-4 border-t border-neutral-100 dark:border-neutral-800/80 space-y-1.5 shrink-0">
           <button
-            onClick={onOpenAiAssistant}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-mono text-sm text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-all group"
+            onClick={() => handleNavClick("portal")}
+            className="w-full flex items-center justify-between px-3 py-2 rounded-xl font-mono text-xs bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 font-bold transition-all border border-cyan-500/20"
           >
-            <MessageSquare className="w-4 h-4 text-cyan-500 group-hover:text-cyan-600" />
-            <span>Ask AI</span>
+            <div className="flex items-center gap-2.5">
+              <UserCircle className="w-4 h-4 text-cyan-500" />
+              <span>Live Portal Demo</span>
+            </div>
+            <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-cyan-500 text-neutral-900 dark:text-neutral-900 font-bold">
+              OPEN
+            </span>
           </button>
 
           <button
-            onClick={() => handleNavClick("login")}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-mono text-sm text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-all"
+            onClick={onOpenAiAssistant}
+            className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-mono text-xs text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-all group"
           >
-            <UserCircle className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
-            <span>Client Portal</span>
+            <MessageSquare className="w-4 h-4 text-cyan-500 group-hover:text-cyan-600" />
+            <span>Ask Growth AI</span>
           </button>
 
           <button
             onClick={toggleDarkLight}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-mono text-sm text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-all"
+            className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-mono text-xs text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-all"
           >
             {isDark ? (
               <>
-                <Sun className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
-                <span>Light Mode</span>
+                <Sun className="w-4 h-4 text-neutral-400" />
+                <span>Light Theme</span>
               </>
             ) : (
               <>
-                <Moon className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
-                <span>Dark Mode</span>
+                <Moon className="w-4 h-4 text-neutral-400" />
+                <span>Dark Theme</span>
               </>
             )}
           </button>

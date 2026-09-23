@@ -31,15 +31,22 @@ export const ClientPortalPage: React.FC<{ onNavigate: (page: PageId) => void }> 
   
   const [activeTab, setActiveTab] = useState("dashboard");
 
+  // Fallback demo user if not logged in
+  const activeUser = user || {
+    id: "demo-user",
+    name: "Growth Leader (Guest Demo)",
+    email: "demo@mahagrowth.com",
+    company: "Apex Scale Corp",
+    role: "client" as const,
+    permissions: [],
+    token: ""
+  };
+  const isDemo = !user;
+
   const handleLogout = () => {
     logout();
     onNavigate("home");
   };
-
-  if (!user) {
-    onNavigate("login");
-    return null;
-  }
 
   // Filter actions for the dashboard view
   const pendingActions = aiActions.filter(a => a.status === 'pending');
@@ -55,7 +62,34 @@ export const ClientPortalPage: React.FC<{ onNavigate: (page: PageId) => void }> 
 
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        
+        {/* Live Demo Mode Banner */}
+        {isDemo && (
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-cyan-500/15 via-blue-500/10 to-transparent border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-neutral-900 dark:text-white">
+              <span className="w-3 h-3 rounded-full bg-cyan-500 animate-ping shrink-0" />
+              <div className="text-xs sm:text-sm font-mono">
+                <strong className="text-cyan-600 dark:text-cyan-400 font-bold">LIVE DEMO MODE:</strong> You are exploring the interactive Client Portal. Test AI action approvals, data syncing, and channel integrations.
+              </div>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                onClick={() => onNavigate("login")}
+                className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-neutral-950 font-mono font-bold text-xs shadow-md transition-all cursor-pointer"
+              >
+                Create Free Workspace
+              </button>
+              <button
+                onClick={() => onNavigate("login")}
+                className="px-4 py-2 rounded-xl bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-neutral-800 dark:text-neutral-200 font-mono text-xs transition-all cursor-pointer"
+              >
+                Sign In
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Sidebar */}
@@ -67,10 +101,10 @@ export const ClientPortalPage: React.FC<{ onNavigate: (page: PageId) => void }> 
                 <FolderLock className="w-6 h-6 text-cyan-500" />
               </div>
               <h2 className="text-lg font-bold text-neutral-900 dark:text-white truncate relative z-10">
-                {workspace?.company_name || user.company || "My Workspace"}
+                {workspace?.company_name || activeUser.company || "My Workspace"}
               </h2>
               <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 truncate relative z-10">
-                {user.email}
+                {activeUser.email}
               </p>
               
               <div className="mt-6 pt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2 relative z-10">
@@ -139,13 +173,13 @@ export const ClientPortalPage: React.FC<{ onNavigate: (page: PageId) => void }> 
               <>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">Welcome back, {user.name}</h1>
+                    <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">Welcome back, {activeUser.name}</h1>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">Here is your live growth diagnostic overview.</p>
                   </div>
                   <button 
                     onClick={refreshData}
                     disabled={isLoading}
-                    className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-mono text-xs font-bold rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors shadow-sm flex items-center gap-2 disabled:opacity-50"
+                    className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-mono text-xs font-bold rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors shadow-sm flex items-center gap-2 disabled:opacity-50 cursor-pointer"
                   >
                     <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
                     Sync Data
@@ -367,7 +401,7 @@ export const ClientPortalPage: React.FC<{ onNavigate: (page: PageId) => void }> 
                     <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">Company Name</label>
                     <input 
                       type="text" 
-                      defaultValue={workspace?.company_name || user.company} 
+                      defaultValue={workspace?.company_name || activeUser.company} 
                       className="w-full px-4 py-2 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white text-sm focus:border-cyan-500 focus:outline-none" 
                     />
                   </div>
@@ -375,7 +409,7 @@ export const ClientPortalPage: React.FC<{ onNavigate: (page: PageId) => void }> 
                     <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">Admin Email</label>
                     <input 
                       type="email" 
-                      defaultValue={user.email} 
+                      defaultValue={activeUser.email} 
                       readOnly
                       className="w-full px-4 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 text-sm" 
                     />
